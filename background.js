@@ -1,5 +1,10 @@
 chrome.browserAction.onClicked.addListener(getInfo);
 
-function getInfo(){
-	chrome.tabs.sendMessage(tab.id, "Loaded");
+var message = {
+	"txt": "Loaded"
+}
+
+function getInfo(tab){
+	console.log(tab);
+	chrome.tabs.sendMessage(tab.id, message);
 }

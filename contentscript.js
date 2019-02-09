@@ -23,16 +23,15 @@ function getData(){
 
 }
 
-window.addEventListener ("load", myMain, false);
+console.log("log something");
+chrome.runtime.onMessage.addListener(gotMessage);
 
-function myMain (evt) {
-    var jsInitChecktimer = setInterval (checkForJS_Finish, 111);
+function gotMessage(message, sender, sendResponse){
+	if(message.txt === 'Loaded'){
+		getData();
+	}
 
-    function checkForJS_Finish () {
-        if (document.getElementsByClassName('email')[0] && document.getElementsByClassName('project-text')[0] && document.getElementsByClassName('js-name')[0] && document.getElementsByClassName('dragHandle horizontal-navigation--item navbuttonshade dib current active')[0] )
-         {
-            clearInterval (jsInitChecktimer);
-            getData();
-        }
-    }
 }
+
+
+
