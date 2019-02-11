@@ -8,7 +8,15 @@ function getData(){
 
 	email = document.getElementsByClassName('email')[0].innerHTML;
 	console.log('User: ' + email);
-	project = document.getElementsByClassName('project-text textellipsis')[0].innerHTML;
+
+	// if(document.getElementsByClassName('project-text textellipsis')[0].innerHTML == 'undefined'){
+	// 	project = document.querySelectorAll('[data-at]')[0].innerText;
+	// }elese{
+	// 	project = (document.getElementsByClassName('project-text textellipsis')[0].innerHTML
+	// }
+	project = (document.getElementsByClassName('project-text textellipsis')[0] != undefined) ? document.getElementsByClassName('project-text textellipsis')[0].innerHTML : document.querySelectorAll('[data-at]')[0].innerText;
+
+
 	dashboard = document.getElementsByClassName('textellipsis dib eightcolmax')[0].innerText;
 	email = 'User: ' + email;
 	project = ('Project: ' + project + ' - ' +  location.href.substr(location.href.indexOf('project')+ 8,10));
@@ -33,5 +41,11 @@ function gotMessage(message, sender, sendResponse){
 
 }
 
+// alina.stavarache@unilever.com Project: 1998167124 dashbaord: https://app.brandwatch.com/project/1998167124/dashboards/584264
+// extension breaks
 
+// uriel@swarm.lat starbucks
 
+// <span class="selectedText dib doublepadding-right fullwidth textellipsis valignmiddle" data-at="project-selected-class-name">MKT - Research Queries for NLP</span>
+
+// <span class="selectedText dib doublepadding-right fullwidth textellipsis valignmiddle" data-at="project-selected-class-name">Alsea - Starbucks</span>
