@@ -42,12 +42,3 @@ function gotMessage(message, sender, sendResponse){
 	}
 
 }
-
-// alina.stavarache@unilever.com Project: 1998167124 dashbaord: https://app.brandwatch.com/project/1998167124/dashboards/584264
-// extension breaks
-
-// uriel@swarm.lat starbucks
-
-// <span class="selectedText dib doublepadding-right fullwidth textellipsis valignmiddle" data-at="project-selected-class-name">MKT - Research Queries for NLP</span>
-
-// <span class="selectedText dib doublepadding-right fullwidth textellipsis valignmiddle" data-at="project-selected-class-name">Alsea - Starbucks</span>
