@@ -33,7 +33,6 @@ function getData(){
 
 }
 
-console.log("log something");
 chrome.runtime.onMessage.addListener(gotMessage);
 
 function gotMessage(message, sender, sendResponse){
