@@ -7,25 +7,27 @@ function getData(){
 	var info;
 
 	email = document.getElementsByClassName('email')[0].innerHTML;
-	console.log('User: ' + email);
-
-	// if(document.getElementsByClassName('project-text textellipsis')[0].innerHTML == 'undefined'){
-	// 	project = document.querySelectorAll('[data-at]')[0].innerText;
-	// }elese{
-	// 	project = (document.getElementsByClassName('project-text textellipsis')[0].innerHTML
-	// }
-	project = (document.getElementsByClassName('project-text textellipsis')[0] != undefined) ? document.getElementsByClassName('project-text textellipsis')[0].innerHTML : document.querySelectorAll('[data-at]')[0].innerText;
-
-
-	dashboard = document.getElementsByClassName('textellipsis dib eightcolmax')[0].innerText;
 	email = 'User: ' + email;
+
+	project = (document.getElementsByClassName('project-text textellipsis')[0] != undefined) ? document.getElementsByClassName('project-text textellipsis')[0].innerHTML : document.querySelectorAll('[data-at]')[0].innerText;
 	project = ('Project: ' + project + ' - ' +  location.href.substr(location.href.indexOf('project')+ 8,10));
 
-	dashboard = ('Dashboard: ' + dashboard + ' - ' + location.href);
-	tab = document.getElementsByClassName('horizontal-navigation--item navbuttonshade dib current active')[0].innerText;
-	tab = 'Tab: ' + tab;
+	if(document.getElementsByClassName('textellipsis dib eightcolmax')[0] != undefined){
+		dashboard = document.getElementsByClassName('textellipsis dib eightcolmax')[0].innerText;
+		dashboard = ('Dashboard: ' + dashboard + ' - ' + location.href + '\n');
+	}else{
+		dashboard ='';
+	}
 
-	info = email + '\n' + project + '\n' + dashboard + '\n' + tab;
+	if(document.getElementsByClassName('horizontal-navigation--item navbuttonshade dib current active')[0] != undefined){
+		tab = document.getElementsByClassName('horizontal-navigation--item navbuttonshade dib current active')[0].innerText;
+		tab = 'Tab: ' + tab;
+	}else{
+		tab = '';
+	}
+	
+
+	info = email + '\n' + project + '\n' + dashboard + tab;
 	prompt("copy the info" , info);
 
 
